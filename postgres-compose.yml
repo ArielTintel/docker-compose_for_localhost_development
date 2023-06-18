@@ -1,0 +1,16 @@
+version: "3"
+services:
+  postgres:
+    image: postgres:12.5-alpine
+    container_name: postgres_localhost
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+    volumes:
+      - db-data:/var/lib/postgres_localhost
+
+volumes:
+  db-data:
+    name: postgres_localhost
